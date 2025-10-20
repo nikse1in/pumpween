@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>$PUMPWEEN hat maker — Halloween</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Upload your PFP and drag the pumpkin hat into place. Download and share a Halloween-ready avatar for $PUMPWEEN.">
+</head>
+<body>
+  <div class="bg-decor">
+    <div class="web web-tl"></div>
+    <div class="web web-tr"></div>
+    <div class="bats"></div>
+  </div>
+
+  <div class="container">
+    <header class="header">
+      <div>
+        <h1 class="spooky">$PUMPWEEN hat maker</h1>
+        <p class="subtitle">Happy Halloween! <strong></strong> 🎃</p>
+      </div>
+
+      <!-- CA bar -->
+      <div class="ca-bar" role="group" aria-label="Contract address">
+        <label for="caInput">CA:</label>
+        <input id="caInput" type="text" placeholder="Paste token contract address" spellcheck="false" />
+        <button id="copyCA" class="ghost small" title="Copy CA">Copy</button>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="controls">
+        <label class="file">
+          <input id="fileInput" type="file" accept="image/*" />
+          <span>Upload PFP</span>
+        </label>
+
+        <label class="range-label">Hat Size
+          <input id="scaleRange" type="range" min="0.4" max="2.5" step="0.01" value="1">
+        </label>
+
+        <button id="downloadBtn" disabled>Download PNG</button>
+        <button id="resetBtn" class="ghost">Reset</button>
+      </div>
+
+      <p class="instructions">
+        1) Upload your photo. 2) <strong>Drag the pumpkin hat</strong> into place (double-click to recenter). 3) Use the size slider. 4) Hit Download. 👻
+      </p>
+
+      <div class="canvas-wrap">
+        <canvas id="editor" width="600" height="600" aria-label="Editor canvas"></canvas>
+      </div>
+
+      <!-- Bottom CTAs -->
+      <div class="cta-bar">
+        <a class="btn" id="communityBtn" href="https://t.me/yourcommunity" target="_blank" rel="noopener">Community</a>
+        <a class="btn" id="buyBtn" href="https://dexscreener.com/yourpair" target="_blank" rel="noopener">Buy</a>
+        <button class="btn x" id="shareX">Share on X</button>
+      </div>
+      <small class="share-hint">We’ll download your PNG, then open X with a prefilled post. Attach the image in the composer.</small>
+    </div>
+
+    <footer class="footer">
+      <small>Made with 🕸️ &amp; ☕ — static HTML/JS (GitHub Pages ready)</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
